@@ -2,11 +2,11 @@ import logging
 import warnings
 import django
 from django.conf import settings
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned, ValidationError
 from django.core.urlresolvers import NoReverseMatch, reverse, resolve, Resolver404, get_script_prefix
 from django.db import transaction
-from django.db.models.sql.constants import QUERY_TERMS, LOOKUP_SEP
+from django.db.models.sql.constants import QUERY_TERMS
 from django.http import HttpResponse, HttpResponseNotFound
 from django.utils.cache import patch_cache_control
 from tastypie.authentication import Authentication
@@ -45,6 +45,8 @@ class NOT_AVAILABLE:
     def __str__(self):
         return 'No such data is available.'
 
+
+LOOKUP_SEP = '__'
 
 class ResourceOptions(object):
     """

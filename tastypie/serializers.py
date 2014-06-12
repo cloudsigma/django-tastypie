@@ -3,7 +3,7 @@ from StringIO import StringIO
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.serializers import json
-from django.utils import simplejson
+import json as simplejson
 from django.utils.encoding import force_unicode
 from tastypie.bundle import Bundle
 from tastypie.exceptions import UnsupportedFormat
